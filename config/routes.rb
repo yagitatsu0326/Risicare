@@ -16,13 +16,13 @@ Rails.application.routes.draw do
   namespace :member do
   	resources :posts
   	resources :notifications, only: [:index]
-  	resources :members, only: [:index,:show,:edit,:update]
-  	resources :inquiries, only: [:new,:index,:create,:show]
+  	resources :members
   end
   scope module: :member do
   	get "homes" => "homes#top"
   	resources :informations, only: [:index,:show]
   	resources :schedules, only: [:index,:show]
+    resources :inquiries, only: [:new,:index,:create,:show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

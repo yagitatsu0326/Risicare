@@ -10,6 +10,46 @@
   </head>
 
   <body>
+    <header>
+      <div class ="container">
+        <!----- 会員 ----->
+        <% if member_signed_in? %>
+          <%= link_to root_path do %>
+            <div class ="header-logo">Risicare</div>
+          <% end %>
+          <%= link_to destroy_member_session_path, method: :delete, class: "header-list" do %>Logout<% end %>
+
+        <!----- 管理者 ----->
+        <% elsif admin_signed_in? %>
+          <div class ="header-nav-left">
+            <%= link_to root_path do %>
+              <div class ="header-logo">Risicare</div>
+            <% end %>
+          </div>
+          <ul class ="header-nav-right">
+            <li><%= link_to "News", admin_informations_path, class: "header-list" %></li>
+            <li><%= link_to "Schedule", admin_schedules_path, class: "header-list" %></li>>
+            <li><%= link_to "Members", admin_members_path, class: "header-list" %></li>
+            <li><%= link_to "Q&A", admin_questions_path, class: "header-list" %></li>
+            <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "header-list" %></li>
+          </ul>
+
+        <!----- ゲスト ----->
+        <% else %>
+          <div class ="header-nav-left">
+            <%= link_to root_path do %>
+              <div class ="header-logo">Risicare</div>
+            <% end %>
+          </div>
+          <ul class ="header-nav-right">
+            <li><%= link_to "News", informations_path, class: "header-list"  %></li>
+            <li><%= link_to "Schedule", schedules_path, class: "header-list" %></li>
+            <li><%= link_to "Contact", new_inquiry_path, class: "header-list" %></li>
+            <li><%= link_to "Team", new_member_session_path, class: "header-list" %></li>
+          </ul>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
