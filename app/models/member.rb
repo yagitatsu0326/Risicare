@@ -4,9 +4,9 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :posts, dependent: :destory
-  has_many :likes, dependent: :destory
-  has_many :comments, dependent: :destory
-  has_many :questions, dependent: :destory
-  has_many :answers, dependent: :destory
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :questions, dependent: :destroy
+  has_many :answers, dependent: :destroy
 end
