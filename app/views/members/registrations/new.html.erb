@@ -1,29 +1,57 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "members/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class ="container">
+  <div class ="row">
+    <h2 class ="col-lg-6 col-lg-offset-3">R.community</h2>
+    <p class ="col-lg-6 col-lg-offset-3">新規登録</p>
   </div>
+  <div class ="login-container" style="margin: 0 auto; width: 500px;">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "members/shared/error_messages", resource: resource %>
+      <!----- 名前　----->
+      <div class ="row">
+          <div class ="col-lg-3">フリガナ (姓)</div>
+          <div class ="col-lg-9"><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class: "form-control" %></div>
+      </div>
+      <div class ="row">
+          <div class ="col-lg-3">フリガナ (名)</div>
+          <div class ="col-lg-9"><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", class: "form-control" %></div>
+      </div>
+     <div class ="row">
+          <div class ="col-lg-3">名前 (姓)</div>
+          <div class ="col-lg-9"><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control" %></div>
+      </div>
+     <div class ="row">
+          <div class ="col-lg-3">名前 (名)</div>
+          <div class ="col-lg-9"><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %></div>
+      </div>
+      <!----- メール　----->
+      <div class ="row">
+          <div class ="col-lg-3">メールアドレス</div>
+          <div class ="col-lg-9"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></div>
+      </div>
+      <!----- パスワード　----->
+      <div class= "row">
+        <div class ="col-lg-3">パスワード
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %>文字以上)</em>
+          <% end %>
+        </div>
+        <div class ="col-lg-9">
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        </div>
+      </div>
+      <!----- パスワード(確認)　----->
+      <div class= "row">
+        <div class ="col-lg-3">パスワード</div>
+        <div class ="col-lg-9"><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+      </div>
+      <!--　登録ボタン　-->
+      <div class="actions">
+        <%= f.submit "新規登録", class: "btn btn-success btn-block" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% end %>
+    <%= render "members/shared/links" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "members/shared/links" %>
