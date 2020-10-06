@@ -70,6 +70,7 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'pry-byebug'
 
 

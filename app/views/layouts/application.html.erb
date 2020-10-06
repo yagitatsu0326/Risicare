@@ -14,11 +14,20 @@
       <div class ="container">
         <!----- 会員 ----->
         <% if member_signed_in? %>
-          <%= link_to root_path do %>
-            <div class ="header-logo">Risicare</div>
-          <% end %>
-          <%= link_to destroy_member_session_path, method: :delete, class: "header-list" do %>Logout<% end %>
-
+          <div class ="header-nav-left">
+            <%= link_to root_path do %>
+              <div class ="header-logo">Risicare</div>
+            <% end %>
+          </div>
+          <ul class ="header-nav-right">
+            <li><%= link_to "Home", member_posts_path, class: "header-list" %></li>
+            <li><%= link_to "MyPage", member_member_path(current_member), class: "header-list" %></li>
+            <li><%= link_to "NewPost", new_member_post_path,class: "header-list" %></li>
+            <li><%= link_to "Activity", member_notifications_path, class: "header-list" %></li>
+            <li><%= link_to "Users", member_members_path, class: "header-list" %></li>
+            <li><%= link_to "Q&A", member_notifications_path, class: "header-list" %></li>
+            <li><%= link_to "Logout", destroy_member_session_path, method: :delete, class: "header-list" %></li>
+          </ul>
         <!----- 管理者 ----->
         <% elsif admin_signed_in? %>
           <div class ="header-nav-left">
@@ -28,7 +37,7 @@
           </div>
           <ul class ="header-nav-right">
             <li><%= link_to "News", admin_informations_path, class: "header-list" %></li>
-            <li><%= link_to "Schedule", admin_schedules_path, class: "header-list" %></li>>
+            <li><%= link_to "Schedule", admin_schedules_path, class: "header-list" %></li>
             <li><%= link_to "Members", admin_members_path, class: "header-list" %></li>
             <li><%= link_to "Q&A", admin_questions_path, class: "header-list" %></li>
             <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "header-list" %></li>

@@ -9,4 +9,6 @@ class Member < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
+
+  attachment :image
 end
