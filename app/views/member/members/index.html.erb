@@ -1,0 +1,27 @@
+<div class ="container">
+	<div class ="index-text-container">
+		<div class ="row">
+			<h2 class ="col-lg-10 col-lg-offset-1">Users</h2>
+		</div>
+	</div>
+	<div class ="index-member-container">
+		<div class ="row">
+			<div class ="col-lg-10 col-lg-offset-1">
+				<table class ="table table-hover table-inverse">
+					<% @members.each do |member| %>
+						<tr class ="row">
+							<td class ="col-lg-4">
+								<%= link_to member_member_path(member.id) do %>
+								<%= attachment_image_tag member, :image, :fill, 50,50, class: "member-image" %>
+								<% end %>
+							</td>
+							<td class ="col-lg-8">
+								<%= member.user_name %>
+							</td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,29 +1,41 @@
-
 <div class ="container">
-  <h2>チームログイン</h2>
-  <div class ="login-container" style="margin: 0 auto; width: 500px;">
+  <div class ="login-text-container">
+    <div class ="row">
+      <h2 class ="col-lg-6 col-lg-offset-3">ログイン</h2>
+    </div>
+  </div>
+  <div class ="login-container" >
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="row">
-        <div class ="col-lg-3">メールアドレス</div>
-        <div class ="col-lg-9"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+        <div class ="form-text col-lg-3">メールアドレス</div>
+        <div class ="form-box col-lg-9"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"%></div>
       </div>
 
       <div class="row">
-        <div class ="col-lg-3">パスワード</div>
-        <div class ="col-lg-9"><%= f.password_field :password, autocomplete: "current-password" %></div>
+        <div class ="form-text col-lg-3">パスワード</div>
+        <div class ="form-box  col-lg-9"><%= f.password_field :password, autocomplete: "current-password", class: "form-control" %></div>
       </div>
 
       <% if devise_mapping.rememberable? %>
         <div class="row">
-          <%= f.check_box :remember_me %>
-          <lavel>保存しますか?</lavel>
+          <div class ="form-text col-lg-12">
+            <%= f.check_box :remember_me %>
+            <lavel>保存しますか?</lavel>
+          </div>
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit "Log in", class: "btn btn-success btn-block" %>
+      <div class="row">
+        <div class ="col-lg-6 col-lg-offset-3">
+          <%= f.submit "Log in", class: "btn btn-success btn-block" %>
+        </div>
       </div>
     <% end %>
-    <%= render "members/shared/links" %>
+    <div class="row">
+      <div class ="col-lg-6 col-lg-offset-3">
+        <%= render "members/shared/links" %>
+      </div>
+    </div>
   </div>
 </div>
+
