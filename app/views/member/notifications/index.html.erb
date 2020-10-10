@@ -7,8 +7,13 @@
 	<div class ="index-member-container">
 		<div class ="row">
 			<div class ="col-lg-10 col-lg-offset-1">
-				<%= render @notifications %>
-				<%= paginate @notifications %>
+				<% notifications = @notifications.where.not(notify_id: current_member.id) %>
+				<% if notifications.exists? %>
+					<%= render notifications %>
+					<%= paginate notifications %>
+				<% else %>
+					<p>通知はありません</p>
+				<% end %>
 			</div>
 		</div>
 	</div>

@@ -7,6 +7,9 @@ class Post < ApplicationRecord
 
 	attachment :image
 
+	validates :body, presence: true
+
+
 	def liked_by?(member)
 		likes.where(member_id: member.id).exists?
 	end
