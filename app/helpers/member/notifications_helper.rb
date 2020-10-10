@@ -1,15 +1,13 @@
 module Member::NotificationsHelper
 	def notification_form(notification)
-		@comment = nil
-		@visiter = link_to notification.notify.user_name, member_member_path(notification.notify_id)
-		@your_post = link_to "あなたの投稿", member_post_path(notification.post_id)#, remote: true
+		@visiter = link_to notification.notify.user_name, member_member_path(notification.notify_id), style:"font-weight: bold;"
+		@your_post = link_to "あなたの投稿", member_post_path(notification.post_id), style:"font-weight: bold;"
 		case notification.action
 			when "like" then
 				"#{@visiter}が#{@your_post}にいいねしました"
-				#{}"どなたからいいねきましたよ"
 			when "comment" then
-				#"どなたからかコメントきましたよ!"
-				@comment = Comment.find_by(id: notification.comment_id)&.body
+				comment = Comment.find_by(id: notification.comment_id)
+				@comment = comment.body
 				"#{@visiter}が#{@your_post}にコメントしました"
 		end
 	end
