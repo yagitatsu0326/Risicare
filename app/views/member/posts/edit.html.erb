@@ -1,0 +1,30 @@
+<div class ="container">
+	<div class ="title-container">
+		<div class ="row">
+			<h2 class ="col-lg-10 col-lg-offset-1">PostEdit</h2>
+		</div>
+	</div>
+	<div class ="body-container">
+		<div class ="row">
+			<div class ="col-lg-10 col-lg-offset-1">
+				<%= form_with model: @post, url: member_post_path(@post.id), method: :patch, remote: true do |f| %>
+					<div class ="post_image row">
+						 <%= attachment_image_tag @post, :image, :fill, 200,200, class: "col-lg-12", fallback: "cropped-noimage.jpg" %>
+						 <%= f.label :image,'画像をアップロード', class: "btn btn-secondary rounded-pill" %>
+						 <%= f.attachment_field :image, style: "display: none;" %>
+					</div>
+					<div class ="form-group row">
+						<lavel class ="control-level">Sentence</lavel>
+						<%= f.text_area :body, class: "form-control col-lg-12" %>
+					</div>
+					<div class="row new_item_submit button">
+	                	<%= f.submit "更新", class: "btn btn-primary btn-lg" %>
+	            	</div>
+				<% end %>
+			</div>
+			<%= link_to member_post_path(@post.id), method: :delete do %>
+				<i class="far fa-trash-alt fa-2x icon"></i>
+			<% end %>
+		</div>
+	</div>
+</div>

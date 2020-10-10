@@ -1,9 +1,10 @@
 <div class ="container">
 	<div class ="show-text-container">
 		<div class ="row">
-			<h2 class ="col-lg-10 col-lg-offset-1">UserDetail</h2>
+			<h2 class ="col-lg-10 col-lg-offset-1"><%= @member.user_name %></h2>
 		</div>
 	</div>
+	<!----- 会員詳細表示 ----->
 	<div class ="show-member-container">
 		<div class ="row">
 			<div class ="col-lg-10 col-lg-offset-1">
@@ -12,7 +13,7 @@
 				 		<%= attachment_image_tag @member, :image, :fill, 100,100, class: "member-image col-lg-12", fallback: "cropped-noimage.jpg"%>
 					 </div>
 					 <div class ="col-lg-7">
-					 	<%= @member.user_name%><br>
+					 	</br>
 					 	<%= @member.introduction %>
 					 </div>
 					 <div class ="col-lg-1">
@@ -29,4 +30,27 @@
 			</div>
 		</div>
 	</div>
+	<!---------------------->
+	<!----- 会員投稿一覧 ----->
+	<div class ="show-posts-container">
+		<div class ="row">
+			<div class ="col-lg-12">
+				<div class ="row">
+					<% @posts.each do |post| %>
+						<div class ="col-lg-4">
+							<%= link_to member_post_path(post.id) do %>
+								<%= attachment_image_tag post, :image, :fill, 300,300, class: "post-image" %>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!---------------------->
 </div>
+
+
+
+
+

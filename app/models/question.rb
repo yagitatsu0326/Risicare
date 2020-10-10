@@ -1,3 +1,3 @@
 class Question < ApplicationRecord
-	belongs_to :members, optional: true
+	belongs_to :members
 end

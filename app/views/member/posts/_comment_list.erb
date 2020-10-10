@@ -1,0 +1,17 @@
+<% comments.each do |comment| %>
+	<div id ="comments-<%= comment.id %>" >
+		<div class ="comment-member col-lg-11 col-lg-offset-1" >
+			<%= link_to member_member_path(comment.member.id) do %>
+				<%= attachment_image_tag comment.member, :image, :fill,25,25, class: "member-image" %><%= comment.member.user_name %>
+			<% end %>
+			<% if comment.member == current_member %>
+				<%= link_to member_post_comment_path(comment.post, comment), method: :delete, remote: true do %>
+					<i class="far fa-trash-alt "></i>
+				<% end %>
+			<% end %>
+		</div>
+		<div class ="comment-text col-lg-10 col-lg-offset-1">
+			<%= comment.body %>
+		</div>
+	</div>
+<% end %>

@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   #会員用サイト
   devise_for :members
   namespace :member do
-  	resources :posts
+    #post "posts/:id" => "posts#comment"
+  	resources :posts do
+      resources :comments, only: [:create, :destroy]
+      resource :likes, only: [:create, :destroy]
+    end
   	resources :notifications, only: [:index]
   	resources :members
   end

@@ -1,5 +1,8 @@
 class Like < ApplicationRecord
-	has_many :notifications, dependent: :destroy
-	belongs_to :members, optional: true
-	belongs_to :posts, optional: true
+
+	belongs_to :member
+	belongs_to :post
+
+	validates_uniqueness_of :post_id, scope: :member_id
+
 end
