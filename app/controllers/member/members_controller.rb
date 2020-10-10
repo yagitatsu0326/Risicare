@@ -20,7 +20,7 @@ class Member::MembersController < ApplicationController
 
 	def show
 		@member = Member.find(params[:id])
-
+		@posts = @member.posts.all
 	end
 
 

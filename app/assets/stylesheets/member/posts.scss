@@ -1,3 +1,54 @@
 // Place all the styles related to the member/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title-container {
+	width: 500px;
+	height: auto;
+	margin: 50px auto 0 auto;
+	color:white;
+	text-align: center;
+}
+.body-container {
+	width: 500px;
+	height: auto;
+	margin: 0 auto 50px auto;
+	background-color: white;
+	border-radius: 25px;
+	padding:20px;
+}
+
+
+/*  投稿一覧　*/
+.post-image {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.member-image {
+	margin: 0 10px 5px 0;
+	border-radius: 50%;
+}
+.member-name {
+	color: white;
+}
+
+
+
+
+/* 投稿詳細 */
+.show-post-image {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.middle-box {
+	margin-bottom: 20px;
+}
+.post-text {
+	margin-top: 5px;
+}
+
+/* 投稿編集 */
+.icon {
+	position:absolute;
+	top: 700px;
+}

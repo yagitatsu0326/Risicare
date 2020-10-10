@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/91f50bbecd.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -20,11 +21,18 @@
             <% end %>
           </div>
           <ul class ="header-nav-right">
-            <li><%= link_to "Home", member_posts_path, class: "header-list" %></li>
-            <li><%= link_to "MyPage", member_member_path(current_member), class: "header-list" %></li>
-            <li><%= link_to "NewPost", new_member_post_path,class: "header-list" %></li>
-            <li><%= link_to "Activity", member_notifications_path, class: "header-list" %></li>
+            <li><%= link_to "Posts", member_posts_path, class: "header-list" %></li>
             <li><%= link_to "Users", member_members_path, class: "header-list" %></li>
+            <li><%= link_to "NewPost", new_member_post_path,class: "header-list" %></li>
+            <li><%= link_to "Acount", member_member_path(current_member),class: "header-list" %></li>
+            <li>
+              <% if unchecked_notifications.any? %>
+                <%= link_to "Activity", member_notifications_path, class: "header-list" %><i class="fas fa-exclamation" data-fa-transform="shrink-8 left-30" style ="color:gold;"></i>
+              <% else %>
+                <%= link_to "Activity", member_notifications_path, class: "header-list" %>
+              <% end %>
+            </li>
+            </li>
             <li><%= link_to "Q&A", member_notifications_path, class: "header-list" %></li>
             <li><%= link_to "Logout", destroy_member_session_path, method: :delete, class: "header-list" %></li>
           </ul>

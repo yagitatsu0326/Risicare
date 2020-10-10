@@ -1,0 +1,3 @@
+console.log(111);
+$("#comments_field").html("<%= j(render 'member/posts/comment_list', comments: @comments )%>")
+$("textarea").val("")
