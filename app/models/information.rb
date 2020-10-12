@@ -1,3 +1,3 @@
 class Information < ApplicationRecord
-	belongs_to :genres, optional: true
+	belongs_to :genres
 end

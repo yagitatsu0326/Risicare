@@ -17,7 +17,13 @@
 	border-radius: 25px;
 	padding:20px;
 }
-
+/*  新規投稿　*/
+.image-squar {
+	margin-bottom: 10px;
+}
+.post-form {
+	margin-top: 10px;
+}
 
 /*  投稿一覧　*/
 .post-image {
@@ -32,9 +38,6 @@
 	color: white;
 }
 
-
-
-
 /* 投稿詳細 */
 .show-post-image {
 	text-align: center;
@@ -47,8 +50,4 @@
 	margin-top: 5px;
 }
 
-/* 投稿編集 */
-.icon {
-	position:absolute;
-	top: 700px;
-}
+

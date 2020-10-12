@@ -23,9 +23,6 @@ class Member::MembersController < ApplicationController
 		@posts = @member.posts.all.order(created_at: :desc)
 	end
 
-
-
-
 	private
 	def member_params
 		params.require(:member).permit(:image,:user_name,:introduction)

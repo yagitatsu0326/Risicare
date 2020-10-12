@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "member/homes#top"
+  root 'member/homes#top'
   #管理者サイト
   devise_for :admins
   namespace :admin do
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   #会員用サイト
   devise_for :members
   namespace :member do
-    #post "posts/:id" => "posts#comment"
   	resources :posts do
       resources :comments, only: [:create, :destroy]
       resource :likes, only: [:create, :destroy]
@@ -23,10 +22,13 @@ Rails.application.routes.draw do
   	resources :members
   end
   scope module: :member do
-  	get "homes" => "homes#top"
+  	get 'homes', to: 'homes#top'
   	resources :informations, only: [:index,:show]
   	resources :schedules, only: [:index,:show]
-    resources :inquiries, only: [:new,:index,:create,:show]
+    resources :inquiries, only: [:new,:create]
+    post 'inquiries/confilm', to: 'inquiries#confilm', as: 'confilm'
+    post 'inquiries/back', to: 'inquiries#back', as: 'back'
+    get 'inquiries/done', to: 'inquiries#done', as: 'done'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

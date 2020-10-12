@@ -10,14 +10,12 @@
 				<%= form_with model: @post, url: member_posts_path, local: true do |f| %>
 					<div class ="row">
 						<div class ="post-image">
-						 	<%= attachment_image_tag @post, :image, :fill, 200,200, class: "col-lg-12", fallback: "cropped-noimage.jpg" %>
-						 </div>
-						 <%= f.label :image,'画像をアップロード', class: "btn btn-secondary rounded-pill" %>
-						 <%= f.attachment_field :image, style: "display: none;" %>
+						 	<%= attachment_image_tag @post, :image, :fill,200,200, class: "image-squar col-lg-12", fallback: "cropped-noimage.jpg" %>
+						</div>
+						<%= f.attachment_field :image %>
 					</div>
 					<div class ="form-group row">
-						<lavel class ="control-level">Sentence</lavel>
-						<%= f.text_area :body, class: "form-control col-lg-12" %>
+						<%= f.text_area :body, class: "post-form form-control col-lg-12", placeholder: "キャプションを書く" %>
 					</div>
 					<div class="row new_item_submit button">
                     	<%= f.submit "投稿", class: "btn btn-primary btn-lg" %>
@@ -26,4 +24,15 @@
 			</div>
 		</div>
 	</div>
-</div
+</div>
+<script>
+	$(function(){
+	    $('#post_image').on('change', function (e) {
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	        $(".image").attr('src', e.target.result);
+	    }
+	    reader.readAsDataURL(e.target.files[0]);
+	});
+	});
+</script>
