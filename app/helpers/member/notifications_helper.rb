@@ -6,9 +6,11 @@ module Member::NotificationsHelper
 			when "like" then
 				"#{@visiter}が#{@your_post}にいいねしました"
 			when "comment" then
-				comment = Comment.find_by(id: notification.comment_id)
-				@comment = comment.body
-				"#{@visiter}が#{@your_post}にコメントしました"
+				unless notification.comment_id.nil?
+					comment = Comment.find_by(id: notification.comment_id)
+					@comment = comment.body
+					"#{@visiter}が#{@your_post}にコメントしました"
+				end
 		end
 	end
 

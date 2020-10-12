@@ -27,6 +27,7 @@ class Member::PostsController < ApplicationController
 	def edit
 		@post = Post.find(params[:id])
 	end
+
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(post_params)
@@ -40,8 +41,9 @@ class Member::PostsController < ApplicationController
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
-		redirect_to member_members_path(@post.member.id)
+		redirect_to member_member_path(current_member)
 	end
+
 
 	private
 	def post_params

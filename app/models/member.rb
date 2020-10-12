@@ -14,4 +14,12 @@ class Member < ApplicationRecord
   has_many :passive_notifications, class_name:"Notification", foreign_key:"notified_id", dependent: :destroy
 
   attachment :image
+
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name_kana, presence: true
+  validates :first_name_kana, presence: true
+  validates :user_name, presence: true, uniqueness: true, format: { with: /\A[A-Za-z]\w*\z/ }
+  validates :introduction ,presence: true, length: { maximum: 255 }
+
 end

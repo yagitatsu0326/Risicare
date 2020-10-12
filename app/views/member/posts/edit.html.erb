@@ -2,16 +2,20 @@
 	<div class ="title-container">
 		<div class ="row">
 			<h2 class ="col-lg-10 col-lg-offset-1">PostEdit</h2>
+			<%= link_to member_post_path(@post.id), method: :delete do %>
+				<i class="far fa-trash-alt fa-2x icon"></i>
+			<% end %>
 		</div>
 	</div>
 	<div class ="body-container">
 		<div class ="row">
 			<div class ="col-lg-10 col-lg-offset-1">
 				<%= form_with model: @post, url: member_post_path(@post.id), method: :patch, remote: true do |f| %>
-					<div class ="post_image row">
+					<div class ="row">
+						<div class ="post_image">
 						 <%= attachment_image_tag @post, :image, :fill, 200,200, class: "col-lg-12", fallback: "cropped-noimage.jpg" %>
-						 <%= f.label :image,'画像をアップロード', class: "btn btn-secondary rounded-pill" %>
-						 <%= f.attachment_field :image, style: "display: none;" %>
+						</div>
+						<%= f.attachment_field :image %>
 					</div>
 					<div class ="form-group row">
 						<lavel class ="control-level">Sentence</lavel>
@@ -22,9 +26,17 @@
 	            	</div>
 				<% end %>
 			</div>
-			<%= link_to member_post_path(@post.id), method: :delete do %>
-				<i class="far fa-trash-alt fa-2x icon"></i>
-			<% end %>
 		</div>
 	</div>
 </div>
+<script>
+	$(function(){
+	    $('#post_image').on('change', function (e) {
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	        $(".image").attr('src', e.target.result);
+	    }
+	    reader.readAsDataURL(e.target.files[0]);
+	});
+	});
+</script>
