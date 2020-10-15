@@ -8,7 +8,7 @@ class Member::PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.member_id = current_member.id
 		if @post.save
-			redirect_to member_member_path(current_member)
+			redirect_to member_member_path(current_member), notice: "投稿されました"
 		else
 			render "new"
 		end
@@ -31,9 +31,8 @@ class Member::PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(post_params)
-			redirect_to member_post_path(@post.id)
+			redirect_to member_post_path(@post.id), notice: "投稿内容更新されました"
 		else
-			@post = Post.find(params[:id])
 			render "edit"
 		end
 	end

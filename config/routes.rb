@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   	resources :informations
   	resources :schedules
   	resources :members, only: [:index]
-  	resources :questions, only: [:index]
-  	resources :answers, only: [:new,:create,:show,:edit,:destroy,:update]
+  	resources :answers
   end
 
   #会員用サイト
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
     end
   	resources :notifications, only: [:index]
   	resources :members
+    resources :questions, only: [:new, :create, :index, :show]
   end
   scope module: :member do
   	get 'homes', to: 'homes#top'

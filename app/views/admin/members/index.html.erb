@@ -1,46 +1,45 @@
-<div class ="container">
-	<div class ="admin-index-text-container">
-		<div class ="row">
-			<h2 class = "col-lg-6">登録者一覧</h2>
-			<h2 class = "col-lg-6">計<%= @member_count %>人</h2>
-		</div>
+<div class ="admin-title-container">
+	<div class ="row">
+		<div class ="flash-text col-lg-10 col-lg-offset-1"><p><%= flash[:notice] %></p></div>
+		<h2 class = "col-lg-10 col-lg-offset-1">登録者一覧</h2>
+		<p class = "col-lg-10 col-lg-offset-1">計<%= @member_count %>人</p>
 	</div>
-	<div class ="admin-index-member-container">
-		<div class ="row">
-			<div class ="col-lg-12">
-				<table class ="table table-hover table-inverse">
+</div>
+<div class ="admin-body-container">
+	<div class ="row">
+		<div class ="col-lg-12">
+			<table class ="table table-hover table-inverse">
+				<tr class ="row">
+					<th class ="col-lg-2"></th>
+					<th class ="col-lg-2">名前</th>
+					<th class ="col-lg-2">フリガナ</th>
+					<th class ="col-lg-2">ユーザネーム</th>
+					<th class ="col-lg-2">メール</th>
+					<th class ="col-lg-2">登録日</th>
+				</tr>
+				<% @members.each do |member| %>
 					<tr class ="row">
-						<th class ="col-lg-2"></th>
-						<th class ="col-lg-2">名前</th>
-						<th class ="col-lg-2">フリガナ</th>
-						<th class ="col-lg-2">ユーザネーム</th>
-						<th class ="col-lg-2">メール</th>
-						<th class ="col-lg-2">登録日</th>
+						<td class ="col-lg-2">
+							<%= attachment_image_tag member, :image, :fill, 50,50, format: "jpg" %>
+						</td>
+						<td class ="col-lg-2">
+							<%= member.last_name %><%= member.first_name %>
+						</td>
+						<td class ="col-lg-2">
+							<%= member.last_name_kana %><%= member.first_name_kana %>
+						</td>
+						<td class ="col-lg-2">
+							<%= member.user_name %>
+						</td>
+						<td class ="col-lg-2">
+							<%= member.email %>
+						</td>
+						<td class ="col-lg-2">
+							<%= member.created_at.strftime('%Y/%m/%d ') %>
+						</td>
 					</tr>
-					<% @members.each do |member| %>
-						<tr class ="row">
-							<td class ="col-lg-2">
-								<%= attachment_image_tag member, :image, :fill, 50,50, format: "jpg" %>
-							</td>
-							<td class ="col-lg-2">
-								<%= member.last_name %><%= member.first_name %>
-							</td>
-							<td class ="col-lg-2">
-								<%= member.last_name_kana %><%= member.first_name_kana %>
-							</td>
-							<td class ="col-lg-2">
-								<%= member.user_name %>
-							</td>
-							<td class ="col-lg-2">
-								<%= member.email %>
-							</td>
-							<td class ="col-lg-2">
-								<%= member.created_at.strftime('%Y/%m/%d ') %>
-							</td>
-						</tr>
-					<% end %>
-				</table>
-			</div>
+				<% end %>
+			</table>
 		</div>
 	</div>
 </div>

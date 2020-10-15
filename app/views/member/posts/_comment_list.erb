@@ -5,7 +5,7 @@
 				<%= attachment_image_tag comment.member, :image, :fill,25,25, class: "member-image" %><%= comment.member.user_name %>
 			<% end %>
 			<% if comment.member == current_member %>
-				<%= link_to member_post_comment_path(comment.post, comment), method: :delete, remote: true do %>
+				<%= link_to member_post_comment_path(comment.post, comment), method: :delete, remote: true, data: {confirm: "このコメントを削除しますか？"}  do %>
 					<i class="far fa-trash-alt "></i>
 				<% end %>
 			<% end %>

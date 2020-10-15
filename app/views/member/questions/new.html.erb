@@ -1,0 +1,29 @@
+<div class ="container">
+	<div class ="title-container">
+		<div class ="row">
+			<h2 class ="col-lg-10 col-lg-offset-1">Q&A</h2>
+			<p class ="col-lg-10 col-lg-offset-1">YourQuestion</p>
+		</div>
+	</div>
+	<div class ="body-container">
+		<div class ="row">
+			<div class ="col-lg-10 col-lg-offset-1">
+				<div class ="row">
+					<%= attachment_image_tag @member, :image, :fill, 30,30, class: "member-image" %><%= @member.user_name%>
+				</div>
+			</div>
+			<div class ="col-lg-10 col-lg-offset-1">
+				<%= form_with(model: @question, url: member_questions_path, local: true) do |f| %>
+				<%= render 'layouts/error_messages', model: f.object %>
+					<div class ="form-group row">
+						<%= f.text_area :body, class: "post-form form-control col-lg-12", placeholder: "質問事項記入" %>
+					</div>
+					<div class="row button">
+                    	<%= f.submit "投稿", class: "btn submit-btn btn-lg" %>
+                	</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div
+
