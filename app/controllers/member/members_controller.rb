@@ -7,9 +7,8 @@ class Member::MembersController < ApplicationController
 	def update
 		@member = Member.find(current_member.id)
 		if @member.update(member_params)
-			redirect_to member_member_path(current_member)
+			redirect_to member_member_path(current_member), notice: "アカウント情報更新しました"
 		else
-			@member = Member.find(current_member.id)
 			render "edit"
 		end
 	end

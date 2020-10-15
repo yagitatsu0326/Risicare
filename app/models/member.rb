@@ -8,7 +8,6 @@ class Member < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :questions, dependent: :destroy
-  has_many :answers, dependent: :destroy
 
   has_many :active_notifications, class_name:"Notification", foreign_key:"notify_id", dependent: :destroy
   has_many :passive_notifications, class_name:"Notification", foreign_key:"notified_id", dependent: :destroy

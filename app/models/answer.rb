@@ -1,4 +1,6 @@
 class Answer < ApplicationRecord
-	belongs_to :members, optional: true
-	belongs_to :admins, optional: true
+	belongs_to :question, optional: true
+	belongs_to :admin
+
+	validates :body, presence: true
 end

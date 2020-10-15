@@ -4,19 +4,20 @@ class Member::CommentsController < ApplicationController
 		@comment = Comment.new(comment_params)
 		@comment.member_id = current_member.id
 		@comment.post_id = @post.id
-		@comment.save
+		if @comment.save
+		  @post.create_notification_comment!(current_member, @comment.id)
+		end
 		@comments = @post.comments.order(created_at: :desc)
-		@post.create_notification_comment!(current_member, @comment.id)
 	end
+
 	def destroy
 		@comment = Comment.find_by(id: params[:id], post_id: params[:post_id])
 		@comment.destroy!
-
 	end
 
 	private
 
 		def comment_params
-			params.require(:comment).permit(:body, :post_id, :member_id)
+			params.require(:comment).permit(:body)
 		end
 end
