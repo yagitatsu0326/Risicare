@@ -1,4 +1,7 @@
 class Admin::AnswersController < ApplicationController
+
+	before_action :authenticate_admin!
+
 	def new
 		@answer = Answer.new
 		@question = Question.find(params[:question_id])

@@ -10,7 +10,7 @@
        <!----- 画像　----->
       <div class ="form-group row">
         <div class ="member-image">
-          <%= attachment_image_tag @member, :image, :fill,200,200, class: "image-squar col-lg-12", fallback: "cropped-noimage.jpg" %>
+          <%= attachment_image_tag @member, :image, :fill,200,200, class: "image-squar col-lg-12", fallback: "/images/cropped-noimage.jpg" %>
         </div>
         <div class ="form-box col-lg-10 col-lg-12"><%= f.attachment_field :image %></div>
       </div>

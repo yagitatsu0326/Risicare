@@ -65,13 +65,15 @@
 	width: 100%;
 	height: auto;
 	margin: 20px auto ;
+		.post-image {
+			margin-bottom: 20px;
+			opacity: 1;
+		}
+		.post-image:hover {
+			opacity: 0.7;
+		}
+
 }
-
-.post-image {
-	margin-bottom: 20px;
-}
-
-
 
 
 
