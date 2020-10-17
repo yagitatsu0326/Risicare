@@ -1,0 +1,206 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree ../../../vendor/assets/stylesheets/.
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+*{
+	padding :0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.clearfix::after {
+  	content: "";
+  	display: block;
+  	clear: both;
+}
+.container{
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+	max-width: 970px;
+	z-index: 2;
+}
+body {
+	background-color: #4a4a44;
+}
+
+
+/* ヘッダー　*/
+header {
+	background-color: #4a4a44;
+	height: 50px;
+}
+
+.header-nav-left {
+	float: left;
+		.header-logo {
+			color: white;
+			font-weight: bold;
+		  	height: 50px;
+		  	line-height: 50px;
+		  	font-size: 40px;
+		  	text-decoration: none;
+		}
+		.header-logo:hover {
+			color: #E5FF64;
+		}
+}
+.header-nav-right {
+	float:right;
+	overflow: hidden;
+		li {
+			text-align: center;
+		  	float: left;
+		  	height: 50px;
+		  	line-height: 50px;
+		  	list-style: none;
+		}
+		.header-list {
+			text-decoration: none;
+			color: #fff;
+			font-weight: bold;
+			padding: 20px;
+		}
+		.header-list:hover {
+			color: #E5FF64;
+		}
+		i {
+			color: #E5FF64;
+			position: relative;
+	    	left: 17px;
+		}
+}
+/* ---------- */
+/* エラーメッセージ */
+.error-box{
+	h4 {
+		font-weight: bold;
+		color: red;
+	}
+	li {
+		color: red;
+		float: left;
+		margin-left: 20px;
+	}
+}
+/* ---------- */
+
+/* ログイン　*/
+.login-container {
+	width: 500px;
+	height: auto;
+	margin: 0 auto 50px auto;
+	background-color: white;
+	border-radius: 25px;
+	padding: 40px;
+}
+.login-text-container {
+	width: 500px;
+	height: auto;
+	margin: 50px auto 0 auto;
+	color: white;
+	text-align: center;
+}
+
+.form-box {
+	margin-bottom: 5px;
+}
+.login-username-text {
+	color: white ;
+}
+/* ---------- */
+
+/* 共通ボタン　*/
+
+.submit-btn {
+	background-color: #808080;
+	color: white;
+}
+.submit-btn:hover {
+	background-color: #a9a9a9;
+	color: white;
+}
+
+/* ---------- */
+
+/* 一覧テーブル */
+.title-container {
+	.question-btn {
+		margin-bottom: 10px;
+	}
+	p {
+		font-size: 20px;
+	}
+	a {
+		color: black;
+	}
+	a:hover {
+		color: black;
+	}
+}
+
+.body-container {
+	.table {
+		margin-bottom: 0;
+	}
+	.index-table tr:hover td{
+		background-color: #E5FF64;
+	}
+	a {
+		color: black;
+	}
+	a:hover {
+		color: black;
+	}
+}
+/* ----------- */
+
+/* スライド画面 */
+.slide-img-container {
+	height: 700px;
+	width: 100%;
+}
+
+/* ---------- */
+
+
+/* 通知コメント */
+.notice {
+	border-bottom: solid;
+    border-color: #E5FF64;
+    border-width: 5px;
+	color: white;
+}
+/* -------------- */
+
+
+
+/* フォーム入力 */
+
+textarea.form-control {
+	height: 100px;
+	margin-top: 10px;
+
+	}
+
+/* ------- */
+
+
+

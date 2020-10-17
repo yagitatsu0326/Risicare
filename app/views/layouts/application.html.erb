@@ -4,12 +4,73 @@
     <title>Risicare</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta charset="UTF-8">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/91f50bbecd.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <header>
+      <div class ="container">
+      <!----- 会員ログイン時 ----->
+      <% if member_signed_in? %>
+        <div class ="header-nav-left">
+          <%= link_to "Risicare", root_path, class: "header-logo" %>
+        </div>
+        <ul class ="header-nav-right">
+          <li><%= link_to "Posts", member_posts_path, class: "header-list" %></li>
+          <li><%= link_to "Users", member_members_path, class: "header-list" %></li>
+          <li><%= link_to "NewPost", new_member_post_path,class: "header-list" %></li>
+          <li><%= link_to "Acount", member_member_path(current_member),class: "header-list" %></li>
+          <li>
+            <% if unchecked_notifications.any? %>
+              <i class="fas fa-exclamation"></i><%= link_to "Activity", member_notifications_path, class: "header-list" %>
+            <% else %>
+              <%= link_to "Activity", member_notifications_path, class: "header-list" %>
+            <% end %>
+          </li>
+          </li>
+          <li><%= link_to "Q&A", member_questions_path, class: "header-list" %></li>
+          <li><%= link_to "Logout", destroy_member_session_path, method: :delete, class: "header-list" %></li>
+        </ul>
+      <!----------------------->
+      <!----- 管理者ログイン時 ----->
+      <% elsif admin_signed_in? %>
+        <div class ="header-nav-left">
+          <%= link_to "Risicare", root_path, class: "header-logo" %>
+        </div>
+        <ul class ="header-nav-right">
+          <li><%= link_to "Members", admin_members_path, class: "header-list" %></li>
+          <li><%= link_to "Q&A", admin_answers_path, class: "header-list" %></li>
+          <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "header-list" %></li>
+        </ul>
+      <!----------------------->
+      <!----- ゲスト閲覧時 ----->
+      <% else %>
+        <div class ="header-nav-left">
+          <%= link_to "Risicare", root_path, class: "header-logo" %>
+        </div>
+        <ul class ="header-nav-right">
+          <li><%= link_to "Contact",  new_inquiry_path, class: "header-list" %></li>
+          <li><%= link_to "Team", new_member_session_path, class: "header-list" %></li>
+          <li><%= link_to "Staff", new_admin_session_path, class: "header-list" %></li>
+        </ul>
+      <% end %>
+      <!----------------------->
+    </div>
+    </header>
+    <div class ="container">
+      <!----- ログインユーザ名表示 ----->
+      <p class ="login-username-text">
+        <% if member_signed_in? %>
+          <i class="fas fa-basketball-ball"></i>ようこそ<%= current_member.user_name %>さん<i class="fas fa-basketball-ball"></i>
+         <% elsif admin_signed_in? %>
+          <i class="fas fa-basketball-ball"></i>スタッフログイン<i class="fas fa-basketball-ball"></i>
+        <% end%>
+      </p>
+      <!----------------------->
+    </div>
     <%= yield %>
   </body>
 </html>

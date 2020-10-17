@@ -1,0 +1,11 @@
+<% if model.errors.any? %>
+  <div class ="error-box">
+  	<h4><span><i class="fas fa-exclamation-circle"></i></span>入力に不備がありますご確認ください</h4>
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

@@ -1,0 +1,45 @@
+<div class ="title-container">
+	<div class ="row">
+		<h2 class ="col-lg-10 col-lg-offset-1">PostEdit</h2>
+		<%= link_to member_post_path(@post.id), method: :delete, data: {confirm: "この投稿を削除しますか？"} do %>
+			<i class="far fa-trash-alt fa-2x icon"></i>
+		<% end %>
+	</div>
+</div>
+<div class ="body-container">
+	<div class ="row">
+		<div class ="col-lg-12">
+			<%= attachment_image_tag @post.member, :image, :fill, 30,30, class: "member-image"%><%= @post.member.user_name %>
+		</div>
+	</div>
+	<div class ="row">
+		<div class ="col-lg-10 col-lg-offset-1">
+			<%= render 'layouts/error_messages_post' %>
+			<%= form_with(model: @post, url: member_post_path(@post.id), method: :patch, local: true) do |f| %>
+				<div class ="row">
+					<div class ="post_image">
+					 <%= attachment_image_tag @post, :image, :fill, 200,200, class: "image-squar col-lg-12", fallback: "cropped-noimage.jpg" %>
+					</div>
+					<%= f.attachment_field :image %>
+				</div>
+				<div class ="form-group row">
+					<%= f.text_area :body, class: "post-form form-control col-lg-12", placeholder: "キャプションを書く"  %>
+				</div>
+				<div class="row button">
+                	<%= f.submit "更新", class: "btn submit-btn btn-lg" %>
+            	</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<script>
+	$(function(){
+	    $('#post_image').on('change', function (e) {
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	        $(".image").attr('src', e.target.result);
+	    }
+	    reader.readAsDataURL(e.target.files[0]);
+	});
+	});
+</script>

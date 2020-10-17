@@ -1,0 +1,16 @@
+// Place all the styles related to the member/questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body-container {
+	.member-image {
+		margin-right: 10px;
+	}
+	p {
+		margin: 10px 0;
+
+	}
+	span {
+		font-weight: bold;
+	}
+}

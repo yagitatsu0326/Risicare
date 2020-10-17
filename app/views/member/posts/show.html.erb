@@ -1,0 +1,52 @@
+
+<div class ="title-container">
+	<div class ="row">
+		<p class ="flash-text"><%= flash[:notice] %></p>
+		<h2 class ="col-lg-10 col-lg-offset-1">Post</h2>
+		<% if @post.member_id == current_member.id %>
+			<%= link_to edit_member_post_path(@post.id) do %>
+				<i class="fa fa-cog fa-2x gear-icon" aria-hidden="true"></i>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+<!----- 投稿詳細画面 ----->
+<div class ="body-container">
+	<div class ="row top-box">
+		<div class ="col-lg-12">
+			<%= link_to member_member_path(@post.member.id) do %>
+				<%= attachment_image_tag @post.member, :image, :fill, 30,30, class: "member-image"%><%= @post.member.user_name %>
+			<% end %>
+		</div>
+		<div class ="show-post-image col-lg-12">
+		 	<%= attachment_image_tag @post, :image, :fill, 400,400 %>
+		 </div>
+	</div>
+	<div class ="row middle-box">
+		 <div class  ="post-like col-lg-2 col-lg-offset-1" >
+		 	<div id ="like-<%= @post.id %>">
+		 		<%= render partial: 'like', locals: {post: @post} %>
+		 	</div>
+		 </div>
+		 <div class  ="post-like col-lg-4">
+		 	<i class="far fa-comment-alt fa-lg"></i> <%= @comments.count %>
+		 </div>
+		 <div class  ="post-like col-lg-4 text-right">
+		 	<%= @post.created_at.strftime('%Y/%m/%d ') %>
+		 </div>
+		<div class ="post-text col-lg-10 col-lg-offset-1">
+			<%= @post.body %>
+		</div>
+	</div>
+	<div class ="row bottom-box">
+		<!----- コメント ----->
+		<div class ="row" id ="comments_field">
+			<%= render 'comment_list', comments: @comments %>
+		</div>
+		<div class ="post-comment col-lg-10 col-lg-offset-1">
+			<%= render 'comment_form', post: @post, comment: @comment %>
+		</div>
+		<!------------------->
+	</div>
+</div>
+<!------------------>

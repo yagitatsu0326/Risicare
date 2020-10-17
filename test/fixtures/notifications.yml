@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notify_id: 1
+  notified_id: 1
+  like_id: 1
+  post_id: 1
+  comment_id: 1
+  action: MyString
+  check: false
+
+two:
+  notify_id: 1
+  notified_id: 1
+  like_id: 1
+  post_id: 1
+  comment_id: 1
+  action: MyString
+  check: false
