@@ -74,6 +74,8 @@ gem 'font-awesome-sass'
 gem 'pry-byebug'
 gem 'rails-i18n'
 
-
+group :production do
+  gem 'mysql2'
+end
 
 
