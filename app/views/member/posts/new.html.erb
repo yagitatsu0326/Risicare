@@ -11,7 +11,7 @@
 			<%= render 'layouts/error_messages', model: f.object %>
 				<div class ="row">
 					<div class ="post-image">
-					 	<%= attachment_image_tag @post, :image, :fill,200,200, class: "image-squar col-lg-12", fallback: "cropped-noimage.jpg" %>
+					 	<%= attachment_image_tag @post, :image, :fill,200,200, class: "image-squar col-lg-12", fallback: "/images/cropped-noimage.jpg" %>
 					</div>
 					<%= f.attachment_field :image %>
 				</div>

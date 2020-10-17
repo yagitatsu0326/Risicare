@@ -1,4 +1,7 @@
 class Member::QuestionsController < ApplicationController
+
+	before_action :authenticate_member!
+
 	def new
 		@question = Question.new
 		@member = current_member

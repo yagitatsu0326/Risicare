@@ -1,5 +1,7 @@
 class Member::PostsController < ApplicationController
 
+	before_action :authenticate_member!
+
 	def new
 		@post = Post.new
 	end

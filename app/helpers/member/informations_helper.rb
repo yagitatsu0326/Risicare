@@ -1,2 +1,0 @@
-module Member::InformationsHelper
-end

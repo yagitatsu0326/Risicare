@@ -1,5 +1,7 @@
 class Member::MembersController < ApplicationController
 
+	before_action :authenticate_member!
+
 	def edit
 		@member = Member.find(current_member.id)
 	end

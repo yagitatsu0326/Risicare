@@ -30,6 +30,10 @@
 		.post-image {
 			text-align: center;
 			margin-bottom: 20px;
+			opacity: 1;
+		}
+		.post-image:hover {
+			opacity: 0.7;
 		}
 		.member-image {
 			margin: 0 10px 5px 0;
@@ -38,15 +42,15 @@
 		.member-name {
 			color: white;
 		}
-
-}
-.posts-container {
-		.post-image:hover {
-			border: 1px solid #E5FF64;
-			margin: -3px;
+		a {
+			color: white;
+		}
+		a:hover {
+			color: #E5FF64;
 		}
 
 }
+/* ---------*/
 
 /* 投稿詳細 */
 .show-post-image {

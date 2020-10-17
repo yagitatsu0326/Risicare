@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   #管理者サイト
   devise_for :admins
   namespace :admin do
-  	resources :informations
-  	resources :schedules
   	resources :members, only: [:index]
   	resources :answers
   end
@@ -23,8 +21,6 @@ Rails.application.routes.draw do
   end
   scope module: :member do
   	get 'homes', to: 'homes#top'
-  	resources :informations, only: [:index,:show]
-  	resources :schedules, only: [:index,:show]
     resources :inquiries, only: [:new,:create]
     post 'inquiries/confilm', to: 'inquiries#confilm', as: 'confilm'
     post 'inquiries/back', to: 'inquiries#back', as: 'back'
