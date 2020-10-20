@@ -4,7 +4,7 @@
 			<div class ="flash-text col-lg-10 col-lg-offset-1"><p><%= flash[:notice] %></p></div>
 			<h2 class ="col-lg-10 col-lg-offset-1">Q＆A</h2>
 			<p class ="col-lg-10 col-lg-offset-1">
-				質問累計　<%= @questions.count%>件
+				質問累計<%= @questions.count%>件 (回答済 <%= @answered.count %> 回答未 <%= @unanswered %>)
 			</p>
 		</div>
 	</div>
@@ -28,6 +28,7 @@
 									<% end %>
 								</div>
 								<div class ="col-lg-2">
+									<%= question.created_at.strftime('%Y/%m/%d ') %><br>
 									<% if question.answer.present? %>
 										<%= link_to edit_admin_answer_path(question.answer.id) do %><i class="fas fa-edit"></i><% end %>
 										<%= link_to admin_answer_path(question), method: :delete, data: {confirm: "削除しますか？"} do %>

@@ -21,6 +21,8 @@ class Admin::AnswersController < ApplicationController
 
 	def index
 		@questions = Question.all.order(created_at: :desc)
+		@answered = Answer.where(question_id: @questions)
+		@unanswered = @questions.count - @answered.count
 	end
 
 	def show
