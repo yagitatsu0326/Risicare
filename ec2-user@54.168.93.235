@@ -1,0 +1,10 @@
+
+TOMAIL='yagitatsuhiro0326@gmail.com'
+
+SMTP_USERNAME='yagitatsuhiro0326@gmail.com'
+SMTP_PASSWORD='yagitatsu0326'
+
+DB_USERNAME="root"
+DB_PASSWORD="yagi0326"
+DB_HOST="rds-mysql-server.chtnmnet0qjy.ap-northeast-1.rds.amazonaws.com"
+DB_DATABASE="Risicare"

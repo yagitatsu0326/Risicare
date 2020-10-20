@@ -6,7 +6,7 @@
 	</div>
 	<div class ="body-container">
 		<div class ="row">
-			<div class ="col-lg-12">
+			<div class ="col-lg-10 col-lg-offset-1">
 				<div class ="row">
 					<%= attachment_image_tag @question.member, :image, :fill, 30,30, class: "member-image" %><%= @question.member.user_name%><br>
 					<%= @question.body %>
@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class ="row">
-			<div class ="col-lg-12">
+			<div class ="col-lg-10 col-lg-offset-1">
 				<%= render 'layouts/error_messages_answer'%>
 				<%=form_with(model: @answer, url: admin_answer_path(@answer.id), method: :patch, local: true) do |f| %>
 					<div class ="form-group row">
