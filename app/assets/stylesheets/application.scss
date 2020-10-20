@@ -199,10 +199,7 @@ header {
 }
 /* -------------- */
 
-
-
 /* フォーム入力 */
-
 textarea.form-control {
 	height: 100px;
 	margin-top: 10px;
@@ -210,6 +207,11 @@ textarea.form-control {
 	}
 
 /* ------- */
+/* notice */
+.flash-text{
+	text-decoration: underline;
+    text-decoration-color: #E5FF64;
+    text-decoration-style: dashed;
+}
 
-
-
+/* ------- */
