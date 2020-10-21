@@ -69,4 +69,15 @@
     </div>
   </div>
 </div>
+<script>
+  $(function(){
+    $('#member_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".image-squar").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+  });
+</script>
 
