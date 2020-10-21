@@ -18,37 +18,6 @@
 //= require_tree .
 
 $(function(){
- 	//画像プレビュー(編集時)
-	$(function(){
-	  $('#post_image').on('change', function (e) {
-	  var reader = new FileReader();
-	  reader.onload = function (e) {
-	      $(".image-squar").attr('src', e.target.result);
-	  }
-	  reader.readAsDataURL(e.target.files[0]);
-	});
-	});
-	//画像プレビュ-(新規登録時)
-	$(function(){
-		$('#post_image').on('change', function (e) {
-		var reader = new FileReader();
-		reader.onload = function (e) {
-		  $(".image").attr('src', e.target.result);
-		}
-		reader.readAsDataURL(e.target.files[0]);
-	});
-	});
-	//画像プレビュ-(ユーザ新規登録)
-	$(function(){
-	  $('#member_image').on('change', function (e) {
-	  var reader = new FileReader();
-	  reader.onload = function (e) {
-	      $(".image").attr('src', e.target.result);
-	  }
-	  reader.readAsDataURL(e.target.files[0]);
-	});
-	});
-
     //Skipper(初回ページ読み込み時)
 	showSlides();
 　　//Skipper(ページ遷移時)
