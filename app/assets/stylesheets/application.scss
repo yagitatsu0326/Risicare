@@ -128,7 +128,9 @@ header {
 /* ---------- */
 
 /* 共通ボタン　*/
-
+.button {
+	text-align: center;
+}
 .submit-btn {
 	background-color: #808080;
 	color: white;
@@ -215,3 +217,10 @@ textarea.form-control {
 }
 
 /* ------- */
+
+/* ------- 会員画像 ------------ */
+.member-image {
+	border-radius: 50%;
+}
+/* --------------------------------- */
+
