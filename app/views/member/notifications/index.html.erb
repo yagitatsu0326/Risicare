@@ -1,6 +1,9 @@
 <div class ="title-container">
 	<div class ="row">
 		<h2 class ="col-lg-10 col-lg-offset-1">Notice</h2>
+		<%= link_to destroy_all_member_notifications_path, method: :delete, data: {confirm: "通知の全削除をします。よろしいですか？"} do %>
+			<i class="far fa-trash-alt fa-2x icon"></i>
+		<% end %>
 	</div>
 </div>
 <div class ="body-container">

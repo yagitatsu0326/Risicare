@@ -8,6 +8,15 @@
 	margin: 0 auto;
 	color:white;
 	text-align: center;
+		.icon {
+			position: relative;
+			top: 25px;
+		    right: 30px;
+		    color: white;
+		}
+		.icon:hover {
+			color: #E5FF64;
+		}
 }
 .body-container {
 	width: 500px;
