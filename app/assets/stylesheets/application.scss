@@ -218,4 +218,55 @@ textarea.form-control {
 	border-radius: 50%;
 }
 /* --------------------------------- */
+/* --------- ページネーション --------- */
+.paginate-container {
+	text-align: center;
+		.pagination {
+			margin: 0 auto;
+			color: white;
+			border: none;
+				a {
+					background-color: #4a4a44;
+					color: white;
+					border: none;
+				}
+				span {
+					background-color: #4a4a44;
+					color: white;
+					border: none;
+				}
+				a:hover {
+					color: #E5FF64;
+					background-color: #4a4a44;
+				}
+				span:hover {
+					color: #E5FF64;
+					background-color: #4a4a44;
+				}
+				.active a {
+					background-color: #E5FF64;
+					color: #4a4a44;
+					border-radius: 50%;
+				}
+		}
+}
+
+
+/* --------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

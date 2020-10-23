@@ -4,7 +4,7 @@
 			<div class ="col-lg-10 col-lg-offset-1">
 				<p class ="flash-text "><%= flash[:notice] %></p>
 				<h2>Q＆A</h2>
-				<p>質問累計<%= @questions.count%>件 (回答済 <%= @answered.count %> 回答未 <%= @unanswered %>)</p>
+				<p>質問累計<%= @question_all.count%>件 (回答済 <%= @answered.count %> 回答未 <%= @unanswered %>)</p>
 			</div>
 		</div>
 	</div>
@@ -51,4 +51,15 @@
 			<!----------------------------->
 		</table>
 	</div>
+	<div class ="paginate-container row">
+		<div class =" col-lg-12"><%= paginate @questions %></div>
+	</div>
 </div>
+
+
+
+
+
+
+
+

@@ -16,7 +16,8 @@ class Member::MembersController < ApplicationController
 	end
 
 	def index
-		@members = Member.all
+		@members = Member.order(created_at: :desc).page(params[:page]).per(20)
+		@member_count = Member.all.count
 	end
 
 	def show
