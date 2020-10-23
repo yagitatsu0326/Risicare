@@ -1,15 +1,16 @@
 <div class ="container">
-	<div class ="admin-title-container">
+	<div class ="title-container">
 		<div class ="row">
-			<div class ="flash-text col-lg-10 col-lg-offset-1"><p><%= flash[:notice] %></p></div>
-			<h2 class ="col-lg-10 col-lg-offset-1">Q＆A</h2>
-			<p class ="col-lg-10 col-lg-offset-1">
-				質問累計<%= @questions.count%>件 (回答済 <%= @answered.count %> 回答未 <%= @unanswered %>)
-			</p>
+			<div class ="col-lg-10 col-lg-offset-1">
+				<p class ="flash-text "><%= flash[:notice] %></p>
+				<h2>Q＆A</h2>
+				<p>質問累計<%= @questions.count%>件 (回答済 <%= @answered.count %> 回答未 <%= @unanswered %>)</p>
+			</div>
 		</div>
 	</div>
 	<div class ="admin-body-container">
-		<table class ="table table-hover table-inverse">
+		<table class ="index-table table">
+			<!-------- 質問一覧表示 -------->
 			<% @questions.each do |question| %>
 				<tr class ="row">
 					<td>
@@ -24,7 +25,9 @@
 									<% if question.answer.present? %>
 										<%= question.answer.body %>
 									<% else %>
-										<%= link_to new_admin_answer_path(question_id: question.id) do %>回答する<% end %>
+										<%= link_to new_admin_answer_path(question_id: question.id) do %>
+											<i class="fas fa-edit"></i>
+										<% end %>
 									<% end %>
 								</div>
 								<div class ="col-lg-2">
@@ -45,6 +48,7 @@
 					</td>
 				</tr>
 			<% end %>
+			<!----------------------------->
 		</table>
 	</div>
 </div>

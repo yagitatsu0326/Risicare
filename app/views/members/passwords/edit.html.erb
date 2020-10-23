@@ -2,10 +2,11 @@
 <div class ="container">
     <div class ="login-text-container">
         <div class ="row">
-            <h2 class ="col-lg-8 col-lg-offset-2">ChangeYourPassword</h2>
+            <h2 class ="col-lg-8 col-lg-offset-2">パスワード変更</h2>
         </div>
     </div>
-    <div class ="login-container" >
+    <div class ="login-body-container" >
+        <!---------------　パスワード変更フォーム --------------->
         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
             <%= render "members/shared/error_messages", resource: resource %>
             <%= f.hidden_field :reset_password_token %>
@@ -30,6 +31,7 @@
                 </div>
             </div>
         <% end %>
+        <!---------------------------------------------------->
         <div class="row">
             <div class ="button">
                 <%= render "members/shared/links" %>
