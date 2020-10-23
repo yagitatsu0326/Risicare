@@ -1,5 +1,5 @@
 <div class ="container">
-	<div class ="show-text-container">
+	<div class ="title-container">
 		<div class ="row">
 			<p class ="flash-text"><%= flash[:notice] %></p>
 			<h2 class ="col-lg-10 col-lg-offset-1"><%= @member.user_name %></h2>
@@ -12,6 +12,7 @@
 				<div class ="row">
 					<div class ="col-lg-4">
 				 		<%= attachment_image_tag @member, :image, :fill, 100,100, class: "member-image col-lg-12", fallback: "/images/cropped-noimage.jpg" %>
+				 		<i class="fas fa-heart fa-lg heart-icon"><span><%= @like_count %></span></i>
 					 </div>
 					 <div class ="col-lg-7">
 					 	</br>
@@ -19,11 +20,9 @@
 					 </div>
 					 <div class ="col-lg-1">
 						<% if current_member.id == @member.id %>
-							<div class="row new_item_submit">
-			                	<%= link_to edit_member_member_path(current_member) do %>
-			                		<i class="fa fa-cog fa-2x gear-icon" aria-hidden="true"></i>
-			                	<% end %>
-			            	</div>
+		                	<%= link_to edit_member_member_path(current_member) do %>
+		                		<i class="fa fa-cog fa-2x gear-icon"></i>
+		                	<% end %>
 		            	<% end %>
 					</div>
 				</div>
@@ -48,7 +47,7 @@
 			</div>
 		</div>
 	</div>
-<!---------------------->
+	<!---------------------->
 </div>
 
 

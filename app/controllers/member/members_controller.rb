@@ -16,12 +16,17 @@ class Member::MembersController < ApplicationController
 	end
 
 	def index
-		@members = Member.all
+		@members = Member.order(created_at: :desc).page(params[:page]).per(20)
+		@member_count = Member.all.count
 	end
 
 	def show
 		@member = Member.find(params[:id])
 		@posts = @member.posts.all.order(created_at: :desc)
+		@like_count = 0
+		@posts.each do |post|
+			@like_count += post.likes.count
+		end
 	end
 
 	private

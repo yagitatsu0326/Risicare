@@ -63,7 +63,7 @@
     </header>
     <div class ="container">
       <!----- ログインユーザ名表示 ----->
-      <p class ="login-username-text">
+      <p class ="login-username">
         <% if member_signed_in? %>
           <i class="fas fa-basketball-ball"></i>ようこそ<%= current_member.user_name %>さん<i class="fas fa-basketball-ball"></i>
          <% elsif admin_signed_in? %>

@@ -1,12 +1,13 @@
-<div class ="edit-text-container">
+<div class ="title-container">
 	<div class ="row">
 		<h2 class ="col-lg-10 col-lg-offset-1">EditProfile</h2>
 	</div>
 </div>
-<div class ="edit-member-container">
+<div class ="body-container">
 	<div class ="row">
 		<div class ="col-lg-10 col-lg-offset-1">
 			<%= render 'layouts/error_messages_member'%>
+			<!----- 会員情報編集フォーム ----->
 			<%= form_with(model: @member, url: member_member_path(current_member), method: :patch, local: true) do |f| %>
 				<div class ="row">
 					<div class ="member-image">
@@ -43,6 +44,7 @@
                 	<%= f.submit "更新", class: "btn submit-btn btn-lg" %>
             	</div>
 			<% end %>
+			<!----------------------------->
 		</div>
 	</div>
 </div>
