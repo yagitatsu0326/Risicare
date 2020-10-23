@@ -20,8 +20,7 @@ class Member::QuestionsController < ApplicationController
 	end
 
 	def index
-		@questions = Question.all.order(created_at: :desc)
-
+		@questions = Question.order(created_at: :desc).page(params[:page]).per(20)
 	end
 
 	def show

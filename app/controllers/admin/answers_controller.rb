@@ -20,9 +20,11 @@ class Admin::AnswersController < ApplicationController
 	end
 
 	def index
-		@questions = Question.all.order(created_at: :desc)
-		@answered = Answer.where(question_id: @questions)
-		@unanswered = @questions.count - @answered.count
+		@questions = Question.order(created_at: :desc).page(params[:page]).per(20)
+		@question_all = Question.all
+		@answered = Answer.where(admin_id: current_admin)
+		@unanswered = @question_all.count - @answered.count
+
 	end
 
 	def show
