@@ -13,6 +13,7 @@
 					<div class ="col-lg-4">
 				 		<%= attachment_image_tag @member, :image, :fill, 100,100, class: "member-image col-lg-12", fallback: "/images/cropped-noimage.jpg" %>
 				 		<i class="fas fa-heart fa-lg heart-icon"><span><%= @like_count %></span></i>
+				 		<i class="fas fa-camera fa-lg camera-icon"><span><%= @post_count %></span></i>
 					 </div>
 					 <div class ="col-lg-7">
 					 	</br>

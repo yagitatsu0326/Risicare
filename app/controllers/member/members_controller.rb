@@ -23,6 +23,7 @@ class Member::MembersController < ApplicationController
 	def show
 		@member = Member.find(params[:id])
 		@posts = @member.posts.all.order(created_at: :desc)
+		@post_count = @posts.count
 		@like_count = 0
 		@posts.each do |post|
 			@like_count += post.likes.count
