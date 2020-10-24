@@ -11,6 +11,7 @@ ja:
     attributes:
       post:
         body: 本文
+        image: 画像
       member:
         last_name: 姓
         first_name: 名
@@ -19,6 +20,8 @@ ja:
         user_name: ユーザネーム
         introduction: 紹介文
         email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認用)
       inquiry:
         name: 名前
         body: 問合せ内容

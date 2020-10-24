@@ -8,6 +8,7 @@ class Post < ApplicationRecord
 	attachment :image
 
 	validates :body, presence: true, length: { maximum: 255 }
+	validates :image, presence: true
 
 
 	def liked_by?(member)
