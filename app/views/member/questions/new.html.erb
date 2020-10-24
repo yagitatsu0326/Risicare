@@ -14,7 +14,9 @@
 			<div class ="col-lg-10 col-lg-offset-1">
 				<%= form_with(model: @question, url: member_questions_path, local: true) do |f| %>
 				<%= render 'layouts/error_messages', model: f.object %>
-					<p class ="question-notice-text">*質問はスタッフ回答後表示されます</p>
+					<div class ="row">
+						<p class ="question-notice-text">*質問はスタッフ回答後表示されます</p>
+					</div>
 					<div class ="form-group row">
 						<%= f.text_area :body, class: "post-form form-control col-lg-12", placeholder: "質問事項記入" %>
 					</div>

@@ -38,11 +38,10 @@ class Admin::AnswersController < ApplicationController
 
 	def update
 		@answer = Answer.find(params[:id])
+		@question = @answer.question
 		if @answer.update(answer_params)
 			redirect_to admin_answers_path, notice: "回答を更新しました"
 		else
-			@answer = Answer.find(params[:id])
-			@question = @answer.question
 			render  'edit'
 		end
 	end
