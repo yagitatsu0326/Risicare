@@ -1,12 +1,12 @@
 <table class ="index-table table">
 	<tr class ="row">
 		<td>
-			<div class ="col-lg-1">
+			<div class ="col-xs-1">
 				<%= link_to member_post_path(notification.post) do %>
 					<%= attachment_image_tag notification.post, :image, :fill, 30,30, class: "member-image" %>
 				<% end %>
 			</div>
-			<div class ="col-lg-11">
+			<div class ="col-xs-11">
 				<%== notification_form(notification) %> <%="(#{time_ago_in_words(notification.created_at)}前)" %><br>
 				<% if !@comment.nil? %>
 					<p><%= @comment %></p>

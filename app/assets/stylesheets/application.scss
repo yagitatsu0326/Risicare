@@ -29,13 +29,7 @@
   	display: block;
   	clear: both;
 }
-.container{
-	margin-right: auto;
-	margin-left: auto;
-	padding-right: 20px;
-	padding-left: 20px;
-	max-width: 970px;
-}
+
 body {
 	background-color: #4a4a44;
 }
@@ -91,6 +85,74 @@ header {
 				}
 		}
 }
+@media screen and (max-width:1000px) {
+	header {
+		height: 100px;
+			.header-nav-left {
+				float: none;
+				text-align: center;
+			}
+			.header-nav-right {
+				float: none;
+				text-align: center;
+					li {
+						font-size: 20px;
+						display: inline;
+						float: none;
+					}
+			}
+	}
+}
+/* --------------------------------- */
+/*-----------  共通コンテナ ---------- */
+.container{
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+	max-width: 1000px;
+}
+@media screen and (max-width:1000px) {
+	.container {
+		width: 1000px;
+	}
+}
+.title-container {
+	color:white;
+	text-align: center;
+		.icon {
+			position: relative;
+			bottom: 40px;
+			left: 80px;
+			color: white;
+		}
+		.icon:hover {
+			color: #E5FF64;
+		}
+}
+.body-container {
+	width: 500px;
+	margin: 0 auto 50px auto;
+	background-color: white;
+	border-radius: 25px;
+	padding:20px;
+		.member-image {
+			margin: 0 10px 10px 0;
+		}
+		.image-squar {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+}
+@media screen and (max-width:1000px) {
+	.body-container {
+		width: 100%;
+	    margin-right: auto;
+	    margin-left: auto;
+	    padding-right: 30px;
+	    padding-left: 30px;
+	}
+}
 /* --------------------------------- */
 
 /* ----------エラーメッセージ---------- */
@@ -135,9 +197,18 @@ header {
 	color: white;
 	margin-top: 50px;
 }
+@media screen and (max-width:1000px) {
+	.login-body-container {
+		width: 100%;
+	}
+	.login-username {
+		margin-top: 100px;
+		text-align: center;
+	}
+}
 /* ------------------------------------ */
 
-/* 共通ボタン　*/
+/*-------------共通ボタン--------------　*/
 .button {
 	text-align: center;
 }
@@ -150,9 +221,9 @@ header {
 	color: white;
 }
 
-/* ---------- */
+/* ------------------------------------ */
 
-/* 一覧テーブル */
+/*------------ 一覧テーブル ------------- */
 
 .table {
 	margin-bottom: 0;
@@ -167,9 +238,9 @@ a:hover {
 	color: black;
 }
 
-/* ----------- */
+/* -------------------------------------- */
 
-/* スライド画面 */
+/*------------- スライド画面 -------------- */
 .slide-img-container {
 	height: 700px;
 	width: 100%;
@@ -184,41 +255,43 @@ a:hover {
 	background-image: image-url('team-5119187.jpg');
 }
 
-/* ---------- */
+/* --------------------------------------- */
 
 
-/* 通知コメント */
+/*------------- 通知コメント --------------- */
 .notice {
 	border-bottom: solid;
     border-color: #E5FF64;
     border-width: 5px;
 	color: white;
 }
-/* -------------- */
+/* ---------------------------------------- */
 
-/* フォーム入力 */
+/*------------- フォーム入力画面 ---------------- */
 textarea.form-control {
 	height: 100px;
 	margin-top: 10px;
+}
+.post-form {
+	margin-top: 10px;
+}
+/* ----------------------------------------- */
 
-	}
-
-/* ------- */
-/* notice */
+/*---------------- notice ------------------ */
 .flash-text{
 	text-decoration: underline;
     text-decoration-color: #E5FF64;
     text-decoration-style: dashed;
 }
+/* ----------------------------------------- */
 
-/* ------- */
-
-/* ------------ 会員画像 ------------ */
+/* ----------------- 会員画像 --------------- */
 .member-image {
 	border-radius: 50%;
 }
-/* --------------------------------- */
-/* --------- ページネーション --------- */
+/* ----------------------------------------- */
+
+/* ------------- ページネーション ------------ */
 .paginate-container {
 	text-align: center;
 		.pagination {
@@ -251,8 +324,7 @@ textarea.form-control {
 		}
 }
 
-
-/* --------------------------------- */
+/* ---------------------------------------- */
 
 
 
