@@ -22,7 +22,9 @@ class Admin::AnswersController < ApplicationController
 	def index
 		@questions = Question.order(created_at: :desc).page(params[:page]).per(20)
 		@question_all = Question.all
+		#回答済のanswerを取得
 		@answered = Answer.where(admin_id: current_admin)
+		#未回答answerを取得
 		@unanswered = @question_all.count - @answered.count
 
 	end

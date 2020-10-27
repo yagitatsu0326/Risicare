@@ -12,6 +12,7 @@ class Post < ApplicationRecord
 
 
 	def liked_by?(member)
+		#いいね済かの判別
 		likes.where(member_id: member.id).exists?
 	end
 
@@ -22,7 +23,7 @@ class Post < ApplicationRecord
 			post_id: id,
 			action: "like"
 		)
-		#自分の投稿に対してのいいねは無効にする
+		#自分の投稿に対してのいいねの通知は無効
 		if notification.notify_id == notification.notified_id
 			notification.checked = true
 		end
@@ -30,13 +31,14 @@ class Post < ApplicationRecord
 	end
 
 	def create_notification_comment!(current_member, comment_id)
-		#コメント時にnotificationテーブルに登録
+		#会員がコメントした時の通知をnotificationテーブルに登録
 		notification = current_member.active_notifications.new(
 			notified_id: member_id,
  			post_id: id,
 			comment_id: comment_id,
 			action: "comment"
 		)
+		#自分の投稿に対してのコメントの通知は無効
 		if notification.notify_id == notification.notified_id
 			notification.checked = true
 		end

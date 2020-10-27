@@ -14,6 +14,7 @@ module Member::NotificationsHelper
 	end
 
 	def unchecked_notifications
+		#未読の通知を取得
 		@notifications = current_member.passive_notifications.where(checked: false)
 	end
 end

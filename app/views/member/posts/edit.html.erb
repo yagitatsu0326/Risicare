@@ -18,6 +18,7 @@
 		<div class ="row">
 			<div class ="col-xs-12">
 				<%= render 'layouts/error_messages_post' %>
+				<!---------- 投稿編集フォーム ---------->
 				<%= form_with(model: @post, url: member_post_path(@post.id), method: :patch, local: true) do |f| %>
 					<div class ="row">
 						<div class ="show-post-image col-xs-12">
@@ -36,6 +37,7 @@
 	                	<%= f.submit "更新", class: "btn submit-btn btn-lg" %>
 	            	</div>
 				<% end %>
+				<!------------------------------------>
 			</div>
 		</div>
 	</div>

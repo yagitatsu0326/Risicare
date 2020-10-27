@@ -9,9 +9,11 @@
 			</div>
 		</div>
 	</div>
+	<!---------- 通知一覧画面 ---------->
 	<div class ="body-container">
 		<div class ="row">
 			<div class ="col-xs-12">
+				<!----- 自分宛の通知があるかの条件分岐 ----->
 				<% notifications = @notifications.where.not(notify_id: current_member.id) %>
 				<% if notifications.exists? %>
 					<%= render notifications %>
@@ -19,7 +21,9 @@
 				<% else %>
 					<p>通知はありません</p>
 				<% end %>
+				<!-------------------------------------->
 			</div>
 		</div>
 	</div>
+	<!-------------------------------->
 </div>
