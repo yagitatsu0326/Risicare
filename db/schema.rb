@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_091904) do
+ActiveRecord::Schema.define(version: 2020_10_27_054439) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2020_10_13_091904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
-    t.integer "answer_id"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -38,21 +37,6 @@ ActiveRecord::Schema.define(version: 2020_10_13_091904) do
     t.integer "member_id"
     t.integer "post_id"
     t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "information", force: :cascade do |t|
-    t.integer "genre_id"
-    t.string "title"
-    t.string "image_id"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,7 +72,6 @@ ActiveRecord::Schema.define(version: 2020_10_13_091904) do
     t.string "user_name"
     t.string "image_id"
     t.string "introduction"
-    t.integer "question_id"
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
@@ -118,16 +101,6 @@ ActiveRecord::Schema.define(version: 2020_10_13_091904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "answer_id"
-  end
-
-  create_table "schedules", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.time "start_time"
-    t.time "finish_time"
-    t.date "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
