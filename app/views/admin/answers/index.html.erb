@@ -32,6 +32,7 @@
 								</div>
 								<div class ="col-xs-2">
 									<%= question.created_at.strftime('%Y/%m/%d ') %><br>
+									<!---------- 回答の有無で表示を切り替え ---------->
 									<% if question.answer.present? %>
 										<%= link_to edit_admin_answer_path(question.answer.id) do %><i class="fas fa-edit"></i><% end %>
 										<%= link_to admin_answer_path(question), method: :delete, data: {confirm: "削除しますか？"} do %>
@@ -42,6 +43,7 @@
 												<i class="far fa-trash-alt"></i>
 											<% end %>
 									<% end %>
+									<!--------------------------------------------->
 								</div>
 							</div>
 						</div>

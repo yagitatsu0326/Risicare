@@ -32,8 +32,13 @@
 /*------------ 投稿詳細画面 ---------- */
 .middle-box {
 	margin-bottom: 20px;
+		.like-icon {
+			color: #fa8072;
+		}
+		.post-text {
+			margin-top: 5px;
+		}
 }
-.post-text {
-	margin-top: 5px;
-}
+
+
 /* --------------------------------- */

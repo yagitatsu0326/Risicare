@@ -279,13 +279,13 @@ textarea.form-control {
 
 /*---------------- notice ------------------ */
 .flash-text{
+	color: white;
 	text-decoration: underline;
     text-decoration-color: #E5FF64;
-    text-decoration-style: dashed;
 }
 /* ----------------------------------------- */
 
-/* ----------------- 会員画像 --------------- */
+/* ----------------- 会員表示画像 --------------- */
 .member-image {
 	border-radius: 50%;
 }

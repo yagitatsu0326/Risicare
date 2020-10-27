@@ -12,6 +12,7 @@
 				</div>
 			</div>
 			<div class ="col-xs-10 col-xs-offset-1">
+				<!---------- Q&A質問入力フォーム ---------->
 				<%= form_with(model: @question, url: member_questions_path, local: true) do |f| %>
 				<%= render 'layouts/error_messages', model: f.object %>
 					<div class ="row">
@@ -24,6 +25,7 @@
                     	<%= f.submit "投稿", class: "btn submit-btn btn-lg"%>
                 	</div>
 				<% end %>
+				<!--------------------------------------->
 			</div>
 		</div>
 	</div>
