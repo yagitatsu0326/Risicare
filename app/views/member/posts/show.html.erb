@@ -12,7 +12,7 @@
 			</div>
 		</div>
 	</div>
-	<!----- 投稿詳細画面 ----->
+	<!---------- 投稿詳細画面 ---------->
 	<div class ="body-container">
 		<div class ="row top-box">
 			<div class ="col-xs-12">
@@ -25,15 +25,15 @@
 			 </div>
 		</div>
 		<div class ="row middle-box">
-			 <div class  ="post-like col-xs-2" >
+			 <div class  ="col-xs-2" >
 			 	<div id ="like-<%= @post.id %>">
 			 		<%= render partial: 'like', locals: {post: @post} %>
 			 	</div>
 			 </div>
-			 <div class  ="post-like col-xs-2">
+			 <div class  ="col-xs-2">
 			 	<i class="far fa-comment-alt fa-lg"></i> <%= @comments.count %>
 			 </div>
-			 <div class  ="post-like col-xs-8 text-right">
+			 <div class  ="col-xs-8 text-right">
 			 	<%= @post.created_at.strftime('%Y/%m/%d ') %>
 			 </div>
 			<div class ="post-text col-xs-12">
@@ -42,7 +42,7 @@
 		</div>
 		<div class ="row bottom-box">
 			<!----- コメント ----->
-			<div class ="row" id ="comments_field">
+			<div class =" col-xs-12" id ="comments_field">
 				<%= render 'comment_list', comments: @comments %>
 			</div>
 			<div class ="post-comment col-xs-10 col-xs-offset-1">
@@ -51,5 +51,5 @@
 			<!------------------->
 		</div>
 	</div>
-	<!------------------>
+	<!-------------------------------->
 </div>

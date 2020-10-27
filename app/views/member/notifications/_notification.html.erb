@@ -7,10 +7,12 @@
 				<% end %>
 			</div>
 			<div class ="col-xs-11">
+				<!----- helper.rbにメソッド記述 ----->
 				<%== notification_form(notification) %> <%="(#{time_ago_in_words(notification.created_at)}前)" %><br>
 				<% if !@comment.nil? %>
 					<p><%= @comment %></p>
 				<% end %>
+				<!--------------------------------->
 			</div>
 		</td>
 	</tr>
