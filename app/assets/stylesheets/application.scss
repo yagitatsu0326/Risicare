@@ -129,6 +129,14 @@ header {
 		.icon:hover {
 			color: #E5FF64;
 		}
+		input#q_user_name_cont {
+		    color: black;
+		}
+		input[type="submit"] {
+		    background-color: white;
+		    color: #4a4a44;
+		    margin-bottom: 5px;
+		}
 }
 .body-container {
 	width: 500px;

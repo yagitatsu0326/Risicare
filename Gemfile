@@ -80,6 +80,7 @@ gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 gem 'pry-byebug'
 gem 'rails-i18n'
+gem 'ransack'
 
 group :production do
   gem 'mysql2'
