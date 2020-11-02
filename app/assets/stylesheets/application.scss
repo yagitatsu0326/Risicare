@@ -141,7 +141,13 @@ header {
 		}
 		.image-squar {
 			width: 100%;
-			margin-bottom: 10px;
+		}
+		.tag-field {
+			text-align: right;
+				.tag {
+					color: black;
+					font-weight: normal
+				}
 		}
 }
 @media screen and (max-width:1000px) {
