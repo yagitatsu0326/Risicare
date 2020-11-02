@@ -22,7 +22,14 @@
 			</div>
 			<div class ="col-xs-12">
 			 	<%= attachment_image_tag @post, :image, :fill, 400,400, class: "image-squar" %>
-			 </div>
+			</div>
+			<!------ 画像タグ表示 ----->
+			<div class ="tag-field col-xs-12">
+				<% @post.tags.each do |tag| %>
+				  <span class="tag">#<%= tag.name %></span>
+				<% end %>
+			</div>
+			<!----------------------->
 		</div>
 		<div class ="row middle-box">
 			 <div class  ="col-xs-2" >
