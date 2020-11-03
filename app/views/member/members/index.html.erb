@@ -1,14 +1,18 @@
+<div class ="container">
+	<div class ="row">
+		<div class ="col-xs-12">
+			<%= search_form_for @search, url: member_members_path do |f| %>
+				<%= f.search_field :user_name_cont %>
+				<input type="submit" value="&#xf002; " class="fas">
+			<% end %>
+		</div>
+	</div>
+</div>
 <div class  ="container">
 	<div class ="title-container">
 		<div class ="row">
 			<h2 class ="col-xs-10 col-xs-offset-1">Users</h2>
 			<P class ="col-xs-10 col-xs-offset-1">登録者数<%= @member_count %>人</P>
-			<div class ="col-xs-10 col-xs-offset-1">
-				<%= search_form_for @search, url: member_members_path do |f| %>
-					<%= f.search_field :user_name_cont %>
-					<%= f.submit "検索" %>
-				<% end %>
-			</div>
 		</div>
 	</div>
 	<div class ="body-container">

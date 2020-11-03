@@ -1,3 +1,4 @@
+<%= render 'search_tag' %>
 <div class ="container">
 	<div class ="title-container">
 		<div class ="row">
@@ -26,7 +27,9 @@
 			<!------ 画像タグ表示 ----->
 			<div class ="tag-field col-xs-12">
 				<% @post.tags.each do |tag| %>
-				  <span class="tag">#<%= tag.name %></span>
+					<%= link_to member_tag_path(tag.id) do %>
+				  		<span class="tag">#<%= tag.name %></span>
+				 	<% end %>
 				<% end %>
 			</div>
 			<!----------------------->
