@@ -129,14 +129,6 @@ header {
 		.icon:hover {
 			color: #E5FF64;
 		}
-		input#q_user_name_cont {
-		    color: black;
-		}
-		input[type="submit"] {
-		    background-color: white;
-		    color: #4a4a44;
-		    margin-bottom: 5px;
-		}
 }
 .body-container {
 	width: 500px;
@@ -340,13 +332,29 @@ textarea.form-control {
 
 /* ---------------------------------------- */
 
+/* ------------------ 検索 ----------------- */
 
-
-
-
-
-
-
+input[type="search"] {
+    border-radius: 25px;
+    color: black;
+    padding: 0 10px;
+}
+input[type="search"]:focus {
+	border: 2px solid #E5FF64;
+	outline: none;
+}
+input.fas {
+	background-color: #4a4a44;
+    color: white;
+    border: none;
+}
+input.fas:focus {
+	outline: none;
+}
+input.fas:hover {
+	color: #E5FF64;
+}
+/* ---------------------------------------- */
 
 
 
