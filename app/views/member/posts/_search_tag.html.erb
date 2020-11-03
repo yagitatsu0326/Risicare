@@ -1,0 +1,12 @@
+<!----- 投稿画像タグ検索 ----->
+<div class ="container">
+	<div class ="row">
+		<div class ="col-xs-12">
+			<%= search_form_for @search, url: member_tags_path do |f| %>
+				<%= f.search_field :name_cont, placeholder: "#タグ検索" %>
+				<input type="submit" value="&#xf002; " class="fas">
+			<% end %>
+		</div>
+	</div>
+</div>
+<!-------------------------->

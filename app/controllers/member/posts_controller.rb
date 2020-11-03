@@ -22,12 +22,14 @@ class Member::PostsController < ApplicationController
 
 	def index
 		@posts = Post.order(created_at: :desc).page(params[:page]).per(18)
+		@search = Tag.ransack(params[:q])
 	end
 
 	def show
 		@post = Post.find(params[:id])
 		@comment = Comment.new
 		@comments = @post.comments.order(created_at: :desc)
+		@search = Tag.ransack(params[:q])
 	end
 
 	def edit

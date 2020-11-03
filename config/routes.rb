@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #会員用サイト
   devise_for :members
   namespace :member do
+    resources :tags, only: [:show, :index]
   	resources :posts do
       resources :comments, only: [:create, :destroy]
       resource :likes, only: [:create, :destroy]
